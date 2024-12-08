@@ -1,18 +1,10 @@
-%% example.md
+# Interpretations of UMAP
 
-# I'm a markdown file.
+Thus, interpreting the outputted graphs from UMAP is vital in order to get accurate results. [^SC_interpretation]
 
-And I can do *emphasis*.
-## With sub-headers
+![My local image](workflow1.jpeg "My Image")
 
-> Block quotes are
-> written like so.
->
-> They can span multiple paragraphs,
-> if you like.
 
-Use 3 dashes for an em-dash. Use 2 dashes for 
-ranges (ex., "it's all in chapters 12--14"). 
-Three dots ... will be converted to an ellipsis 
-(provided you include the smartEllipses option 
-in your preamble). Unicode is supported.
+### References
+
+[^SC_interpretation]: Clarke, Z.A., Andrews, T.S., Atif, J. et al. Tutorial: guidelines for annotating single-cell transcriptomic maps using automated and manual methods. Nat Protoc 16, 2749–2764 (2021). https://doi.org/10.1038/s41596-021-00534-0
