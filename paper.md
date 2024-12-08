@@ -29,13 +29,7 @@ As such, there are some common misconceptions to be considered:
 **False**, the number of datapoints within your cluster doesn't necessarily correlate to anything. With changing hyperparameters and clustering techniques, one individual datapoint in your UMAP plot could just as easily be associated with another cluster. [^Misconceptions]
 
 3. Cluster Distance always matters
-**False**, while the above example me![example](https://github.com/user-attachments/assets/346c1443-a68a-4e63-9e87-a90b00968e99)
-![workflow1](https://github.com/user-attachments/assets/a0d6bca3-1d9b-4bb5-b5cc-65f986678807)
-![test1](https://github.com/user-attachments/assets/3e6a150f-00bb-4c0c-badd-e2562ea52373)
-<img width="922" alt="scRNA-seq_example" src="https://github.com/user-attachments/assets/1b26bd22-0acb-40ff-aabd-d43db1d11652">
-![Proteomics_umap](https://github.com/user-attachments/assets/b809889d-7d51-49df-828a-f04c2069e44e)
-![pop_gen_ex](https://github.com/user-attachments/assets/b3f0351c-bdac-4fdc-a4e4-9060b198e372)
-ntioned different cell types and how they potentially may be related, the distance between clusters could just as easily be unrelated. In essence, you must check the background of your data and annotations to see if you can draw conclusions from these clusters. [^Misconceptions] However, for example if you have a lot of datapoints(and in turn a lot of clusters), the clusters can just as easily start blending together and thus makes it impossible for you to associate one cluster versus another in terms of distance. Really, if anything the content of your clusters is of most importance when looking at any graphs. 
+**False**, while the above example mentioned different cell types and how they potentially may be related, the distance between clusters could just as easily be unrelated. In essence, you must check the background of your data and annotations to see if you can draw conclusions from these clusters. [^Misconceptions] However, for example if you have a lot of datapoints(and in turn a lot of clusters), the clusters can just as easily start blending together and thus makes it impossible for you to associate one cluster versus another in terms of distance. Really, if anything the content of your clusters is of most importance when looking at any graphs. 
 
 ## Applications
 
