@@ -65,12 +65,12 @@ Population genetics is another prime example of UMAP's visualization power and c
 
 [^Misconceptions]: Coenen, Andy, and Adam Pearce. “Understanding Umap.” PAIR Page Redirection, pair-code.github.io/understanding-umap/.
 
-[^scRNA-seq_example] Mary Piper, Meeta Mistry. “Single-Cell RNA-Seq: Integration.” Introduction to Single-Cell RNA-Seq, 21 Nov. 2020, hbctraining.github.io/scRNA-seq_online/lessons/06_integration.html. 
+[^scRNA-seq_example]: Mary Piper, Meeta Mistry. “Single-Cell RNA-Seq: Integration.” Introduction to Single-Cell RNA-Seq, 21 Nov. 2020, hbctraining.github.io/scRNA-seq_online/lessons/06_integration.html. 
 
-[^UMAP_doc] “Basic UMAP Parameters.” Basic UMAP Parameters - Umap 0.5 Documentation, umap-learn.readthedocs.io/en/latest/parameters.html. Accessed 7 Dec. 2024. 
+[^UMAP_doc]: “Basic UMAP Parameters.” Basic UMAP Parameters - Umap 0.5 Documentation, umap-learn.readthedocs.io/en/latest/parameters.html. Accessed 7 Dec. 2024. 
 
-[^NK_cells]Wikipedia contributors. "Natural killer cell." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 16 Oct. 2024. Web. 8 Dec. 2024.
+[^NK_cells]: Wikipedia contributors. "Natural killer cell." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 16 Oct. 2024. Web. 8 Dec. 2024.
 
-[^proteomic_ex] Dorrity, M.W., Saunders, L.M., Queitsch, C. et al. Dimensionality reduction by UMAP to visualize physical and genetic interactions. Nat Commun 11, 1537 (2020). https://doi.org/10.1038/s41467-020-15351-4
+[^proteomic_ex]: Dorrity, M.W., Saunders, L.M., Queitsch, C. et al. Dimensionality reduction by UMAP to visualize physical and genetic interactions. Nat Commun 11, 1537 (2020). https://doi.org/10.1038/s41467-020-15351-4
 
-[^population_gen_ex] Diaz-Papkovich, A., Anderson-Trocmé, L. & Gravel, S. A review of UMAP in population genetics. J Hum Genet 66, 85–91 (2021). https://doi.org/10.1038/s10038-020-00851-4
+[^population_gen_ex]: Diaz-Papkovich, A., Anderson-Trocmé, L. & Gravel, S. A review of UMAP in population genetics. J Hum Genet 66, 85–91 (2021). https://doi.org/10.1038/s10038-020-00851-4
