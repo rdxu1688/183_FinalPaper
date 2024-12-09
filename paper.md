@@ -88,7 +88,7 @@ normalized_data = scaler.fit_transform(cleaned_data)
 print(pd.DataFrame(normalized_data, columns=cleaned_data.columns).head())
 ```
 ## **Running UMAP**  
-UMAP follows the scikit-learn API, making it easy to use. We instantiate a UMAP reducer and fit-transform the scaled penguin data to reduce it to two dimensions.
+UMAP follows the scikit-learn API, making it easy to use. We instantiate a UMAP reducer and fit-transform the scaled penguin data to reduce it to two dimensions. 
 
 ```python
 # Create a reducer
@@ -102,7 +102,7 @@ embedding.shape
 ```
 ## **Putting It All Together: Running UMAP**  
 
-This section provides a complete example of applying UMAP to the Palmer Penguins dataset. We’ll load the data, clean and normalize it, apply UMAP, and visualize the results in one seamless workflow.
+This section provides a complete example of applying UMAP to the Palmer Penguins dataset provided by the UMAP documentation website.[^UMAP_doc] We’ll load the data, clean and normalize it, apply UMAP, and visualize the results in one seamless workflow. 
 
 ---
 
@@ -163,7 +163,7 @@ plt.gca().set_aspect("equal", "datalim")
 plt.title("UMAP Projection of the Penguin Dataset", fontsize=24)
 plt.show()
 ```
-
+![My local image](PenguinUMAP.png "My Image")
 
 ## Interpretations of UMAP
 
