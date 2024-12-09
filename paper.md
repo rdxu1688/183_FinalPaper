@@ -100,6 +100,70 @@ embedding = reducer.fit_transform(scaled_penguin_data)
 # Check the shape of the transformed data
 embedding.shape
 ```
+## **Putting It All Together: Running UMAP**  
+
+This section provides a complete example of applying UMAP to the Palmer Penguins dataset. We’ll load the data, clean and normalize it, apply UMAP, and visualize the results in one seamless workflow.
+
+---
+
+### **Full Code Example**  
+
+```python
+# Import libraries
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+import seaborn as sns
+import umap
+
+# Configure Seaborn for visualization
+%matplotlib inline
+sns.set(style='white', context='notebook', rc={'figure.figsize': (14, 10)})
+
+# Load a dataset 
+penguins = pd.read_csv("https://raw.githubusercontent.com/allisonhorst/palmerpenguins/main/inst/extdata/penguins.csv")
+
+# Inspect the first few rows
+print(penguins.head())
+
+# Drop missing values for simplicity
+penguins = penguins.dropna()
+
+# Count the number of samples per species
+print(penguins.species.value_counts())
+
+# Visualize pairwise relationships between features
+sns.pairplot(penguins.drop("year", axis=1), hue="species")
+
+# Extract relevant numeric features
+penguin_data = penguins[
+    ["bill_length_mm", "bill_depth_mm", "flipper_length_mm", "body_mass_g"]
+].values
+
+# Standardize the data (mean=0, std=1)
+scaled_penguin_data = StandardScaler().fit_transform(penguin_data)
+
+# Create a UMAP reducer
+reducer = umap.UMAP()
+
+# Apply UMAP for dimensionality reduction
+embedding = reducer.fit_transform(scaled_penguin_data)
+
+# Check the shape of the resulting embedding
+print(f"Embedding Shape: {embedding.shape}")
+
+# Create a scatterplot of the UMAP output
+plt.scatter(
+    embedding[:, 0],
+    embedding[:, 1],
+    c=[sns.color_palette()[x] for x in penguins.species.map({"Adelie": 0, "Chinstrap": 1, "Gentoo": 2})]
+)
+plt.gca().set_aspect("equal", "datalim")
+plt.title("UMAP Projection of the Penguin Dataset", fontsize=24)
+plt.show()
+```
+
 
 ## Interpretations of UMAP
 
