@@ -2,6 +2,105 @@
 
 ##### Group 3: Richard Xu, Eugene Kong, Jonathan Lam
 
+## **Libraries Used**
+
+Before using UMAP for dimensionality reduction, we need to import the necessary libraries and load a dataset. This section covers how to import relevant libraries, read data from a file, and inspect it.
+
+---
+
+### **1. Importing Libraries**  
+
+We’ll use the following libraries:  
+
+- **`numpy`**: For numerical operations.  
+- **`pandas`**: For loading and managing data.  
+- **`sklearn`**: For scaling and transforming data.  
+- **`matplotlib` & `seaborn`**: For data visualization.  
+- **`umap`**: For applying dimensionality reduction.  
+
+### **Code Example**  
+```python
+# Import essential libraries
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+import seaborn as sns
+import umap
+```
+
+## **Preparing Data for UMAP**  
+
+Proper data preparation is essential for running UMAP effectively. UMAP expects a clean, numeric matrix where rows represent samples (observations) and columns represent features (variables).[^UMAP_doc] Below are key steps for formatting the data correctly:
+
+### **1. Data Format**  
+- **File Types:** Use common file formats like `.csv` or `.txt`.  
+- **Structure:** Organize the data as a matrix:  
+  - **Rows:** Samples (e.g., individual cells in scRNA-seq).  
+  - **Columns:** Features (e.g., gene expression values).  
+
+---
+
+### **2. Cleaning the Data**  
+- **Remove Missing Values:** Handle missing data by filling in averages or removing incomplete entries.  
+- **Filter Irrelevant Features:** Drop features that don’t provide meaningful variation (e.g., constant columns).  
+
+---
+
+### **3. Normalization**  
+UMAP is sensitive to data scaling, so normalization ensures all features contribute equally:  
+
+- **Standard Scaling:** Use z-scores to adjust values to have a mean of 0 and a standard deviation of 1.  
+  ```python
+  from sklearn.preprocessing import StandardScaler
+  
+  # Example: Standardize the dataset
+  scaled_data = StandardScaler().fit_transform(data)
+  ```
+### **4. Example: Cleaning and Normalizing Data**  
+
+Here’s a simple code snippet demonstrating how to clean and normalize data using Python:  
+
+```python
+# Import libraries
+import numpy as np
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+import seaborn as sns
+import umap
+
+# Load the dataset
+data = pd.read_csv("data.csv")
+
+# Clean the data
+# Drop rows with missing values
+cleaned_data = data.dropna()
+
+# Remove features with zero variance
+cleaned_data = cleaned_data.loc[:, cleaned_data.std() > 0]
+
+# Normalize the data using StandardScaler
+scaler = StandardScaler()
+normalized_data = scaler.fit_transform(cleaned_data)
+
+# Print a preview of the cleaned and normalized data
+print(pd.DataFrame(normalized_data, columns=cleaned_data.columns).head())
+```
+## **Running UMAP**  
+UMAP follows the scikit-learn API, making it easy to use. We instantiate a UMAP reducer and fit-transform the scaled penguin data to reduce it to two dimensions.
+
+```python
+# Create a reducer
+reducer = umap.UMAP()
+
+# Fit and transform the data
+embedding = reducer.fit_transform(scaled_penguin_data)
+
+# Check the shape of the transformed data
+embedding.shape
+```
+
 ## Interpretations of UMAP
 
 Thus, interpreting the outputted graphs from UMAP is vital in order to get accurate results. Below is a typical workflow post clustering as for annotation and verification in the context of single-cell RNA sequencing(scRNA-seq). [^SC_interpretation]
