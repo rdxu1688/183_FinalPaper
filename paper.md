@@ -171,7 +171,7 @@ Thus, interpreting the outputted graphs from UMAP is vital in order to get accur
 
 ![My local image](workflow1.jpeg "My Image")
 
-In the perspective of scRNA-seq data, your goal is to quantify the different cell types using marker genes or gene functions. Typically, the data enters in as a "gene-by-cell" matrix, in which UMAP conducts dimensionality reduction. If certain cell types are known, or a reference is on hand, automatic annotation can be conducted to mark these particular clusters. Then, dependent on the cluster's trend as compared to data (i.e combination of marker genes, pathway analysis, etc) the data can further be annotated to mark any unlabeled clusters or intermediate regions. [^SC_interpretation] As such, the core idea of this is the content of each cluster, we're not necessarily looking at individual data points, we're looking at clusters at a whole.
+In the perspective of scRNA-seq data, your goal is to quantify the different cell types using marker genes or gene functions. Typically, the data enters in as a "gene-by-cell" matrix, in which UMAP conducts dimensionality reduction. If certain cell types are known, or a reference is on hand, automatic annotation can be conducted to mark these particular clusters. Then, dependent on the cluster's trend as compared to data (i.e combination of marker genes, pathway analysis, etc) the data can further be annotated to mark any unlabeled clusters or intermediate regions. [^SC_interpretation] As such, the core idea of this is the content of each cluster, we're not necessarily looking at individual data points, we're looking at clusters at a whole. Thus this core concept and steps can be applied to any set of data you wish to process.
 
 ## Example: scRNA-seq Context
 
