@@ -2,6 +2,24 @@
 
 ##### Group 3: Richard Xu, Eugene Kong, Jonathan Lam
 
+## **Introduction**
+
+What is a dimension? Most of us are familiar with the idea of a line as one-dimensional, a plane as two-dimensional, and space as three-dimensional. Analytically, dimensions represent measurable quantities or features of a dataset. We often use X and Y axes to plot data on a plane and add Z to represent three-dimensional space. What happens when there are more? How do we handle 4, 5, or even 20,000 dimensions?
+
+This challenge is common in fields like genomics and transcriptomics. For example, the human genome contains roughly 20,000 protein-coding genes where each gene can be considered a "dimension" influencing biological outcomes. Visualizing patterns or relationships in such high-dimensional data is not something our human brains—or even our poor 2 dimensional computer monitors—can handle intuitively. If you could, please contact us immediately. 
+
+Fortunately, we have tools like UMAP (Uniform Manifold Approximation and Projection) to help us. Developed by McInnes et al., UMAP is a cutting-edge dimensionality reduction technique widely used in data science and bioinformatics. It excels at taking complex, high-dimensional data and projecting it into a lower-dimensional space—often 2D or 3D—while preserving as much meaningful structure as possible.
+
+## **How it works**
+
+The key to UMAP's effectiveness lies in its approach. It models high-dimensional data as a weighted graph, where each data point is a node, and edges represent similarities between points. The goal is to create a low-dimensional representation that can retain both local relationships (e.g., nearest neighbors) and global structures (e.g., clusters), resulting in a clean and interpretable 2D or 3D graph. 
+
+Think of a crumpled piece of paper. It exists in three dimensions, right? Now imagine uncrumpling it and flattening it out: it’s essentially two-dimensional. While this analogy is oversimplified, UMAP similarly reduces dimensions but relies on mathematical graphs rather than physical manipulation.
+
+UMAP starts by modeling the high-dimensional data as a graph. Each data point is treated as a node (a 0-simplex), and connections (edges) are formed with its nearest neighbors to create 1-simplexes. These connections may also extend to form higher-dimensional structures like 2-simplexes (triangles) based on the data’s topology. Simply speaking, UMAP calculates distances between each data point and its neighbors with the main parameters being n-neighbors. The n-neighbors parameter defines the number of nearest neighbors to consider for each point, controlling the balance between local versus global structure. A large n value includes more neighbors, emphasizing global structure by preserving broader patterns across the dataset. A smaller n value focuses more on the local relationships, helping to preserve smaller clusters and finer details in the data. For a chosen n value UMAP assigns each node the smallest variable radius that can encompass its closest  n-neighbors. In dense areas, the nearest neighbors are closer, leading to tighter graph structures. In sparse areas, the nearest neighbors are farther apart, resulting in a looser graph structure. 
+
+Once the high-dimensional graph is constructed, UMAP minimizes a cost function (often based on cross-entropy) using an optimization algorithm (typically stochastic gradient descent). This process aims to find a low-dimensional representation that best preserves the local and global relationships in the data. By balancing the preservation of local neighborhoods with broader global patterns, UMAP produces an effective and interpretable 2D or 3D visualization.
+
 ## **Libraries Used**
 
 Before using UMAP for dimensionality reduction, we need to import the necessary libraries and load a dataset. This section covers how to import relevant libraries, read data from a file, and inspect it.
